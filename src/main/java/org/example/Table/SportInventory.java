@@ -39,10 +39,10 @@ public class SportInventory {
 
     @Override
     public String toString() {
-        return "Shuttlecock{" +
-                "id=" + serial_number +
-                ", name='" + getLabel() + '\'' +
-                ", warehouseId='" + warehouseId.getWarehouse_id() + '\'' +
+        return "SportInventory{" +
+                "ID: " + serial_number +
+                " Название инвентаря: " + getLabel() +
+                ", ID склада: " + warehouseId.getWarehouse_id() +
                 '}';
     }
 

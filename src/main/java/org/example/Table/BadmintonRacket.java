@@ -35,12 +35,12 @@ public class BadmintonRacket extends Item {
 
     @Override
     public String toString() {
-        return "Racket{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", string_tension='" + string_tension  + '\'' +
-                ", rigidity_racket='" + rigidity_racket + '\'' +
-                "id_inventory='" + getSportInventory().getSerial_number() + '\'' +
+        return "Racket{" +'\n'+
+                "ID ракетик:" + getId() +'\n'+
+                " Название:'" + getName() + '\n' +
+                " Натяжение ракетки:'" + string_tension  + '\n'+
+                " Жесткость ракет:'" + rigidity_racket + '\n' +
+                "ID инвентаря:'" + getSportInventory().getSerial_number() + '\n' +
                 '}'
                 ;
     }

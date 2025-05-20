@@ -7,7 +7,7 @@ import lombok.Data;
 @Entity
 @Table(name = "Item")
 @Inheritance(strategy = InheritanceType.JOINED)//Наследование
-public class Item {
+public abstract class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

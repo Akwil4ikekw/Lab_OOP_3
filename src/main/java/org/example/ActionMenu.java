@@ -26,8 +26,9 @@ public class ActionMenu {
         ACTION_DELETE_SHUTTLECOCK(14, "Удалить воланы"),
         ACTION_EDIT_SHUTTLECOCK(15, "Изменить воланы"),
         ACTION_SHOW_ALL_SHUTTLCOCKS(16, "Показать все воланы"),
+        ACTION_SHOW_ALL_ITEM(17, "Вывести все предметы"),
 
-        ACTION_EXIT(17, "Выход");
+        ACTION_EXIT(18, "Выход");
 
 
         private final int id;

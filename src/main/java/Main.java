@@ -42,6 +42,27 @@ public class Main {
                     warehouseDao.save(warehouse);
 
                 }
+                case ACTION_SHOW_ALL_ITEM -> {
+                    BadmintonRacketDao badmintonRacketDao = new BadmintonRacketDao();
+                    System.out.println("Введите  ID инвентаря ");
+                    int sportInventoryId = Integer.parseInt(scanner.nextLine());
+                    List<Object> listEntity = badmintonRacketDao.getItemAll(sportInventoryId);
+
+
+                    for (Object item : listEntity) {
+                        if (item instanceof BadmintonRacket racket) {
+                            System.out.println(racket);
+                        }
+                    }
+
+                    for (Object item : listEntity) {
+                        if (item instanceof Shuttlecock shuttlecock) {
+                            System.out.println(shuttlecock);
+                        }
+                    }
+
+
+                }
                 case ACTION_EDIT_WAREHOUSE -> {
                     WarehouseDao warehouseDao = new WarehouseDao();
                     System.out.println("Введите ID склада");
@@ -94,7 +115,6 @@ public class Main {
                     System.out.println("Введите название инвентаря");
                     String name = scanner.nextLine();
 
-                    String manufacture = scanner.nextLine();
                     System.out.println("Введите id склада");
                     int warehouseId = Integer.parseInt((scanner.nextLine()));
 
@@ -112,8 +132,11 @@ public class Main {
                     sportInventoryDao.delete(inventoryId);
                 }
                 case ACTION_SHOW_ALL_INVENTORIES -> {
+                    System.out.println("Введите id склада");
+                    int warehouse_id = Integer.parseInt((scanner.nextLine()));
+
                     SportInventoryDao sportInventoryDao = new SportInventoryDao();
-                    List<SportInventory> listEntity = sportInventoryDao.getAll();
+                    List<SportInventory> listEntity = sportInventoryDao.getInventoryAll(warehouse_id);
                     for (SportInventory item : listEntity) {
                         System.out.println(item.toString());
                     }
@@ -144,7 +167,6 @@ public class Main {
                     SportInventory sportInventory = sportInventoryDao.getById(inventoryId);
                     badmintonRacket.setSportInventory(sportInventory);
                     badmintonRacketDao.save(badmintonRacket, sportInventory.getClass(),inventoryId);
-
                     badmintonRacketDao.save(badmintonRacket);
                 }
                 case ACTION_DELETE_RACKET -> {
@@ -181,6 +203,8 @@ public class Main {
                 }
                 case ACTION_SHOW_ALL_RACKETS -> {
                     BadmintonRacketDao badmintonRacketDao = new BadmintonRacketDao();
+                    System.out.println("Введите  ID инвентаря ");
+                    //int sportInventoryId = Integer.parseInt(scanner.nextLine());
                     List<BadmintonRacket> listEntity = badmintonRacketDao.getAll();
                     for (BadmintonRacket item : listEntity) {
                         System.out.println(item.toString());
@@ -245,10 +269,9 @@ public class Main {
                         System.out.println(item.toString());
                     }
                 }
+
+
             }
-
-
-
         } while  (action != actionMenu.ACTION_EXIT);
     }
     public static void printActions() {

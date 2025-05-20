@@ -29,11 +29,11 @@ public class Shuttlecock extends Item{
 
     @Override
     public String toString() {
-        return "Shuttlecock{" +
-                "id=" + getSportInventory().getSerial_number() +
-                ", name='" + getName() + '\'' +
-                ", typeShuttlecock='" + typeShuttlecock + '\'' +
-                ", resistanceToFly='" + resistanceToFly + '\'' +
+        return "Shuttlecock{" + '\n'+
+                "ID: " + getSportInventory().getSerial_number() +'\n'+
+                " Название: " + getName() + '\n' +
+                " Тип волана: " + typeShuttlecock + '\n' +
+                " Сопротивление к воздуху: " + resistanceToFly + '\n' +
                 '}';
     }
 
